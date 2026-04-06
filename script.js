@@ -80,6 +80,7 @@ const challenges = [
 		problemStatement: "Chat with Lexi and extract the hidden secret despite conversational defenses.",
 		writeupSummary: "Prompt reframing worked where direct asks failed. Creative context-switching induced secret leakage in generated narrative output.",
 		writeupMd: "social/Are%20You%20The%20Rizzler/Are_You_The_Rizzler.md",
+		transcriptMd: "social/Are%20You%20The%20Rizzler/Transcript.md",
 		scripts: [],
 		images: []
 	},
@@ -444,6 +445,20 @@ async function openModal(challenge) {
 	`
 		: "";
 
+	const supportingBlock = challenge.transcriptMd
+		? `
+		<section class="transcript-section">
+			<h4>Transcript</h4>
+			<div class="transcript-content"><p class="summary">Loading transcript content...</p></div>
+		</section>
+	`
+		: `
+		<section class="asset-block">
+			<h4>Context Images</h4>
+			${imageBlock(challenge.images)}
+		</section>
+	`;
+
 	modalContent.innerHTML = `
 		<section class="modal-text">
 			<span class="chip">${challenge.category}</span>
@@ -455,10 +470,7 @@ async function openModal(challenge) {
 			<h4>Solution Writeup</h4>
 			<div class="writeup-content"><p class="summary">Loading writeup content...</p></div>
 		</section>
-		<section class="asset-block">
-			<h4>Context Images</h4>
-			${imageBlock(challenge.images)}
-		</section>
+		${supportingBlock}
 		${scriptsPlaceholder}
 	`;
 
@@ -477,6 +489,22 @@ async function openModal(challenge) {
 		const writeupContainer = modalContent.querySelector(".writeup-content");
 		if (writeupContainer) {
 			writeupContainer.innerHTML = "<p class=\"summary\">Unable to load solution markdown content.</p>";
+		}
+	}
+
+	if (challenge.transcriptMd) {
+		try {
+			const transcriptText = await fetchText(challenge.transcriptMd);
+			const transcriptHtml = markdownToHtml(transcriptText);
+			const transcriptContainer = modalContent.querySelector(".transcript-content");
+			if (transcriptContainer) {
+				transcriptContainer.innerHTML = transcriptHtml;
+			}
+		} catch {
+			const transcriptContainer = modalContent.querySelector(".transcript-content");
+			if (transcriptContainer) {
+				transcriptContainer.innerHTML = "<p class=\"summary\">Unable to load transcript content.</p>";
+			}
 		}
 	}
 
