@@ -1,0 +1,180 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run QR solver",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"misc/Error Correction/Qrsolver.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run QR solver",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"misc/Error Correction/Qrsolver.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run QR solver",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"misc/Error Correction/Qrsolver.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run QR solver",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"misc/Error Correction/Qrsolver.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check segno",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-c",
+				"import importlib.util as u; print(u.find_spec('segno'))"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Install segno",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-m",
+				"pip",
+				"install",
+				"segno"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Inspect segno QR",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-c",
+				"import segno; qr=segno.make('A', version=7, error='L', mask=0, boost_error=False); print(qr.symbol_size()); print(type(qr.matrix)); print(len(qr.matrix), len(qr.matrix[0])); print('top-left rows');\nfor row in range(12):\n    print(''.join('1' if qr.matrix[row][col] else '0' for col in range(12)))"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Inspect segno QR",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"inspect_segno.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Segno path check",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-c",
+				"import segno; print(segno.__file__)"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run QR solver v2",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"misc/Error Correction/Qrsolver.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Install and test OpenCV QR decode",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-m",
+				"pip",
+				"install",
+				"opencv-python-headless"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Test QR scan",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-c",
+				"import cv2; img=cv2.imread(r'misc/Error Correction/reconstructed_scan.png'); det=cv2.QRCodeDetector(); data, pts, straight=det.detectAndDecode(img); print('data=',repr(data)); print('pts=',pts is not None)"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Test QR scan helper",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"test_qr_scan.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Generate final QR",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"misc/Error Correction/make_final_qr.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Test final QR",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"test_final_scan.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

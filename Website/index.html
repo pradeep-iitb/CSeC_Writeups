@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTM x IITBreachers - CTF Writeups</title>
+    <meta name="description" content="Dark themed static website for all 8 CTF challenge writeups, statements, PDFs, images, and solve scripts.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <p class="eyebrow">CTM x IITBreachers Assignment</p>
+        <h1>CTF Writeups By Pradeep</h1>
+        <div class="stats">
+            <div class="stat">
+                <span id="challenge-count">8</span>
+                <small>Challenges</small>
+            </div>
+            <div class="stat">
+                <span id="pdf-count">0</span>
+                <small>PDF Writeups</small>
+            </div>
+            <div class="stat">
+                <span id="script-count">0</span>
+                <small>Python Scripts</small>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="toolbar" aria-label="Filters and search">
+            <div id="filter-buttons" class="filter-buttons"></div>
+        </section>
+
+        <section id="cards-grid" class="cards-grid" aria-live="polite"></section>
+    </main>
+
+    <dialog id="details-modal" class="details-modal">
+        <article id="modal-content"></article>
+        <button id="close-modal" class="close-btn" aria-label="Close details">Close</button>
+    </dialog>
+
+    <template id="challenge-card-template">
+        <article class="card">
+            <header>
+                <span class="chip category"></span>
+                <h2></h2>
+            </header>
+            <p class="summary"></p>
+            <div class="card-actions">
+                <button class="btn btn-secondary" data-action="details">View Details</button>
+            </div>
+        </article>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

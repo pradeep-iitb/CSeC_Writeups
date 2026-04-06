@@ -1,0 +1,7 @@
+{
+  "code-runner.executorMap": {
+    "python": "python -u"
+  },
+  "code-runner.runInTerminal": true,
+  "liveServer.settings.port": 5501
+}
