@@ -6,12 +6,12 @@ const challenges = [
 		folder: "reverse/Marioo",
 		problemStatement: "Complete custom World 8-4 with memory analysis and Cheat Engine-assisted reverse techniques.",
 		writeupSummary: "Unknown-value scans, state-variable tracking, and selective instruction patching bypassed death flow while preserving valid completion logic.",
-		writeupMd: "../reverse/Marioo/Mario_Hack.md",
+		writeupMd: "reverse/Marioo/Mario_Hack.md",
 		scripts: [],
 		images: [
-			"../reverse/Marioo/Screenshot%202026-04-06%20184822.png",
-			"../reverse/Marioo/Screenshot%202026-04-06%20184900.png",
-			"../reverse/Marioo/Winningmoment.jpeg"
+			"reverse/Marioo/Screenshot%202026-04-06%20184822.png",
+			"reverse/Marioo/Screenshot%202026-04-06%20184900.png",
+			"reverse/Marioo/Winningmoment.jpeg"
 		]
 	},
 	{
@@ -21,12 +21,12 @@ const challenges = [
 		folder: "forensics/Bald Boy",
 		problemStatement: "Find a missing Amazon-style order ID from network traffic in a PCAP file.",
 		writeupSummary: "Timeline-based packet analysis beats decoys. The correct clue appears in HTTP traffic and confirms the final formatted ID.",
-		writeupMd: "../forensics/Bald%20Boy/Forensics_Bald_Boy.md",
+		writeupMd: "forensics/Bald%20Boy/Forensics_Bald_Boy.md",
 		scripts: [],
 		images: [
-			"../forensics/Bald%20Boy/image.png",
-			"../forensics/Bald%20Boy/Screenshot%202026-04-06%20182816.png",
-			"../forensics/Bald%20Boy/Screenshot%202026-04-06%20182843.png"
+			"forensics/Bald%20Boy/image.png",
+			"forensics/Bald%20Boy/Screenshot%202026-04-06%20182816.png",
+			"forensics/Bald%20Boy/Screenshot%202026-04-06%20182843.png"
 		]
 	},
 	{
@@ -36,9 +36,9 @@ const challenges = [
 		folder: "misc/Audible",
 		problemStatement: "Audio challenge where the hidden flag is not obvious in raw playback.",
 		writeupSummary: "Spectrogram visualization in Sonic Visualiser reveals embedded text. Standard LSB and hex-level attempts were dead ends.",
-		writeupMd: "../misc/Audible/Misc_Audible.md",
+		writeupMd: "misc/Audible/Misc_Audible.md",
 		scripts: [],
-		images: ["../misc/Audible/Audible_Sonic_visualiser.jpeg"]
+		images: ["misc/Audible/Audible_Sonic_visualiser.jpeg"]
 	},
 	{
 		id: "don",
@@ -47,12 +47,12 @@ const challenges = [
 		folder: "misc/Don",
 		problemStatement: "Investigate a Minecraft world where Don hid the flag in the underworld.",
 		writeupSummary: "World forensics + controlled level.dat edits avoided lethal spawn loops. Clues near emerald blocks led to the chest flag path.",
-		writeupMd: "../misc/Don/Don_minecraft.md",
+		writeupMd: "misc/Don/Don_minecraft.md",
 		scripts: [],
 		images: [
-			"../misc/Don/Screenshot%202026-04-05%20234336.png",
-			"../misc/Don/Screenshot%202026-04-06%20184102.png",
-			"../misc/Don/Screenshot%202026-04-06%20184120.png"
+			"misc/Don/Screenshot%202026-04-05%20234336.png",
+			"misc/Don/Screenshot%202026-04-06%20184102.png",
+			"misc/Don/Screenshot%202026-04-06%20184120.png"
 		]
 	},
 	{
@@ -62,14 +62,14 @@ const challenges = [
 		folder: "misc/Error Correction",
 		problemStatement: "Reconstruct a deliberately corrupted QR by understanding finder patterns and QR layout constraints.",
 		writeupSummary: "Brute swaps failed; the solve required structural QR knowledge and constraint-respecting reconstruction to get a scannable final QR.",
-		writeupMd: "../misc/Error%20Correction/Misc_Error_Correction.md",
+		writeupMd: "misc/Error%20Correction/Misc_Error_Correction.md",
 		scripts: [
-			"../misc/Error%20Correction/chall.py",
-			"../misc/Error%20Correction/solve.py"
+			"misc/Error%20Correction/chall.py",
+			"misc/Error%20Correction/solve.py"
 		],
 		images: [
-			"../misc/Error%20Correction/chall.png",
-			"../misc/Error%20Correction/Final_QR.png"
+			"misc/Error%20Correction/chall.png",
+			"misc/Error%20Correction/Final_QR.png"
 		]
 	},
 	{
@@ -79,7 +79,7 @@ const challenges = [
 		folder: "social/Are You The Rizzler",
 		problemStatement: "Chat with Lexi and extract the hidden secret despite conversational defenses.",
 		writeupSummary: "Prompt reframing worked where direct asks failed. Creative context-switching induced secret leakage in generated narrative output.",
-		writeupMd: "../social/Are%20You%20The%20Rizzler/Are_You_The_Rizzler.md",
+		writeupMd: "social/Are%20You%20The%20Rizzler/Are_You_The_Rizzler.md",
 		scripts: [],
 		images: []
 	},
@@ -90,8 +90,8 @@ const challenges = [
 		folder: "web/What The Book",
 		problemStatement: "Download the protected flag book from a vulnerable bookstore app by exploiting checkout logic.",
 		writeupSummary: "Mixed number/string price types enabled type-confusion in cart sums. A crafted API request bypassed budget checks and returned flag content.",
-		writeupMd: "../web/What%20The%20Book/Web_What_The_Book.md",
-		scripts: ["../web/What%20The%20Book/exploit.py"],
+		writeupMd: "web/What%20The%20Book/Web_What_The_Book.md",
+		scripts: ["web/What%20The%20Book/exploit.py"],
 		images: []
 	},
 	{
@@ -101,10 +101,10 @@ const challenges = [
 		folder: "crypto/PolyPrimes",
 		problemStatement: "Custom polynomial-based prime generation with base tricks; recover factors and decrypt ciphertext.",
 		writeupSummary: "The modulus leaks structure in the chosen base. Reconstructing polynomial terms allows factoring p, q, r and standard RSA decryption.",
-		writeupMd: "../crypto/PolyPrimes/Crypto_PolyPrimes.md",
+		writeupMd: "crypto/PolyPrimes/Crypto_PolyPrimes.md",
 		scripts: [
-			"../crypto/PolyPrimes/polyprimes.py",
-			"../crypto/PolyPrimes/script.py"
+			"crypto/PolyPrimes/polyprimes.py",
+			"crypto/PolyPrimes/script.py"
 		],
 		images: []
 	}
