@@ -196,5 +196,7 @@ def main():
     cv2.imwrite("solved.png", img3)
     print(data3)
 
+# This is not the script i used it to solve this problem , i tried some questions on Virtual Machine and had the files there , But my Kali Linux got corrupted or something so i had to delete the VM and install again I copied the writeups but forgot the scripts , Last day of submission I tried to generate all deleted files again but this doesnt work for this script .
+
 if __name__ == "__main__":
     main()
